@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy_primary">#1A1A2E</color>
+    <color name="navy_dark">#0D0D1A</color>
+    <color name="mint_accent">#7DD4B8</color>
+    <color name="mint_light">#E1F5EE</color>
+    <color name="mint_dark">#085041</color>
+    <color name="amber_light">#FAEEDA</color>
+    <color name="amber_dark">#854F0B</color>
+    <color name="pink_light">#FBEAF0</color>
+    <color name="blue_light">#E6F1FB</color>
+    <color name="bg_main">#FAFAF8</color>
+    <color name="bg_surface">#F5F4F0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#888780</color>
+    <color name="border_light">#E8E7E3</color>
+    <color name="star_color">#EF9F27</color>
+    <color name="green_accept">#1D9E75</color>
+    <color name="status_bar_color">#1A1A2E</color>
+    <color name="transparent">#00000000</color>
+</resources>

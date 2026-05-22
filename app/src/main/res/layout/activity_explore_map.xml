@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_main">
+
+    <!-- Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/navy_primary"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Explore Nearby"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Toggle: Map / List -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_toggle_container">
+
+            <TextView
+                android:id="@+id/btnToggleMap"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Map"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_toggle_active"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btnToggleList"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="List"
+                android:textSize="11sp"
+                android:textColor="#99FFFFFF"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Category filter chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/llCategoryFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+    </HorizontalScrollView>
+
+    <!-- Map Fragment container -->
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- List view (hidden by default) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNearbyProviders"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:visibility="gone" />
+
+    <!-- Floating: "Use my location" -->
+    <TextView
+        android:id="@+id/btnUseMyLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="📍 Use My Location"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/bg_book_btn"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <include layout="@layout/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

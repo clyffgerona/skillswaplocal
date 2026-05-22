@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F6F9">
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#0F2645"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="20dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Get Verified"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.02" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Identity Verification"
+                android:textColor="#4DB6AC"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To ensure community safety, please verify your identity before we create your account."
+                android:textColor="#7A8B9A"
+                android:textSize="13sp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Name"
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_search_bar"
+                android:textColor="#333333"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Middle Name"
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etMiddleName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_search_bar"
+                android:textColor="#333333"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Name"
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_search_bar"
+                android:textColor="#333333"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="32dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step 1: Upload Valid ID"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please upload a clear photo of your government-issued ID or School ID."
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:layout_marginBottom="12dp"/>
+
+            <ImageView
+                android:id="@+id/ivIdPreview"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#E5E9ED"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnUploadId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select ID Image"
+                android:textColor="#0F2645"
+                android:textSize="12sp"
+                android:backgroundTint="#E5E9ED"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step 2: Take a Selfie"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please provide a clear photo of your face for manual verification."
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:layout_marginBottom="12dp"/>
+
+            <ImageView
+                android:id="@+id/ivSelfiePreview"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="#E5E9ED"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnUploadSelfie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Selfie"
+                android:textColor="#0F2645"
+                android:textSize="12sp"
+                android:backgroundTint="#E5E9ED"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="12dp"/>
+
+            <CheckBox
+                android:id="@+id/cbUseAsProfilePic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use this selfie as my public profile picture"
+                android:textColor="#333333"
+                android:textSize="13sp"
+                android:buttonTint="#4DB6AC"
+                android:layout_marginBottom="32dp"/>
+
+            <TextView
+                android:id="@+id/tvVerificationError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#E53935"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnSubmitVerification"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Submit for Review"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_book_btn"
+                android:layout_marginBottom="24dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_surface">
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/navy_primary"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="14dp"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:text="←"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="10dp">
+
+            <TextView
+                android:id="@+id/tvChatAvatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="KR"
+                android:textColor="@color/mint_dark"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_skill_avatar_green" />
+
+            <ImageView
+                android:id="@+id/ivChatAvatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvChatName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="● Active now"
+                android:textColor="@color/mint_accent"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⋮"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerLayout"
+        android:layout_above="@+id/chatInputBar">
+
+        <ProgressBar
+            android:id="@+id/loadingSpinner"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="#4DB6AC" />
+
+        <ScrollView
+            android:id="@+id/scrollChat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbarStyle="outsideOverlay">
+
+            <LinearLayout
+                android:id="@+id/llMessages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp" />
+        </ScrollView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/chatInputBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="10dp"
+        android:layout_above="@+id/bottom_navigation_bar">
+
+        <TextView
+            android:id="@+id/btnAttach"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/navy_primary"
+            android:textSize="22sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginEnd="6dp" />
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:hint="@string/type_message"
+            android:textColorHint="@color/text_secondary"
+            android:textColor="@color/text_primary"
+            android:textSize="11sp"
+            android:background="@drawable/bg_chat_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:maxLines="1"
+            android:inputType="text"
+            android:imeOptions="actionSend"
+            android:layout_marginEnd="6dp" />
+
+        <TextView
+            android:id="@+id/btnMakeRequest"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:text="Make a request"
+            android:textColor="@color/text_secondary"
+            android:textSize="10sp"
+            android:background="@drawable/bg_make_request_btn"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginEnd="6dp" />
+
+        <TextView
+            android:id="@+id/btnSend"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:text="➤"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="@drawable/bg_send_btn"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bottom_navigation_bar"
+        layout="@layout/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F6F9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0F2645"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SkillSwap"
+            android:textColor="#4DB6AC"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create an account to get started"
+            android:textColor="#A8B4C4"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email Address"
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etRegEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_search_bar"
+                android:hint="Enter your email"
+                android:textColorHint="#99A0ABB5"
+                android:textColor="#333333"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnVerifyEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Verify Email"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_book_btn"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_search_bar"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <EditText
+                    android:id="@+id/etRegPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Create a password"
+                    android:textColorHint="#99A0ABB5"
+                    android:textColor="#333333"
+                    android:paddingStart="16dp"
+                    android:inputType="textPassword"
+                    android:enabled="false" />
+
+                <ImageView
+                    android:id="@+id/ivRegPasswordToggle"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_visibility_off"
+                    app:tint="#A0ABB5"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_search_bar"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="32dp">
+
+                <EditText
+                    android:id="@+id/etRegConfirmPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Re-type your password"
+                    android:textColorHint="#99A0ABB5"
+                    android:textColor="#333333"
+                    android:paddingStart="16dp"
+                    android:inputType="textPassword"
+                    android:enabled="false" />
+
+                <ImageView
+                    android:id="@+id/ivRegConfirmToggle"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_visibility_off"
+                    app:tint="#A0ABB5"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvRegError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#E53935"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnRegisterSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Next Step: Verification"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_book_btn"
+                android:layout_marginBottom="24dp"
+                android:enabled="false"
+                android:alpha="0.5"/>
+
+            <TextView
+                android:id="@+id/tvGoToLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? Log In"
+                android:textColor="#0F2645"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

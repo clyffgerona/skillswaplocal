@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SkillSwap Local</string>
+    <string name="home">Home</string>
+    <string name="explore">Explore</string>
+    <string name="messages">Messages</string>
+    <string name="bookings">Bookings</string>
+    <string name="profile">Profile</string>
+    <string name="search_hint">Search skills near you…</string>
+    <string name="browse_categories">Browse categories</string>
+    <string name="nearby_providers">Nearby providers</string>
+    <string name="send_message_book">Send Message &amp; Book</string>
+    <string name="provider_profile">Provider Profile</string>
+    <string name="skill_swap">Skill Swap</string>
+    <string name="make_request">Make a request</string>
+    <string name="type_message">Type a message…</string>
+    <string name="accept">✓ Accept</string>
+    <string name="decline">✗ Decline</string>
+    <string name="booking_request">Booking Request</string>
+    <string name="pending_status">Pending · Awaiting provider</string>
+    <string name="about">About</string>
+    <string name="availability">Availability</string>
+    <string name="exchange_modes">Exchange modes</string>
+    <string name="or">or</string>
+
+    <!-- Add to res/values/strings.xml -->
+    <string name="guidelines_summary">These guidelines define the standards for behavior on the platform, including respect, honesty, safety, and prohibited activities. All users must follow these rules.</string>
+    <string name="terms_summary">The Terms of Service govern your use of the SkillSwap Local app, including account registration, booking conduct, dispute resolution, and liability limitations.</string>
+    <string name="privacy_summary">Our Privacy Policy explains how we collect, use, and protect your personal information, including identity verification, data storage, and your privacy rights.</string>
+</resources>

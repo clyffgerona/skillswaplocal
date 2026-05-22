@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6F9"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#0F2645"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Appeal"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="#FFF5F5">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reason for Suspension"
+                        android:textColor="#E53935"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.05" />
+
+                    <TextView
+                        android:id="@+id/tvSuspensionReason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Loading reason..."
+                        android:textColor="#0F2645"
+                        android:textSize="15sp"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explanation"
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etAppealReason"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@drawable/bg_rect_input"
+                android:gravity="top"
+                android:hint="Provide a detailed explanation of why you believe your account should be reinstated..."
+                android:padding="12dp"
+                android:textSize="14sp"
+                android:textColor="#0F2645"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional Evidence (Optional)"
+                android:textColor="#7A8B9A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etEvidence"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_rect_input"
+                android:gravity="top"
+                android:hint="Any other information or links to evidence..."
+                android:padding="12dp"
+                android:textSize="14sp"
+                android:textColor="#0F2645"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="32dp" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:backgroundTint="#4DB6AC"
+                app:cornerRadius="0dp"
+                android:text="Submit Appeal"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:letterSpacing="0.02" />
+
+            <TextView
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="#7A8B9A"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp">
+
+    <View
+        android:layout_width="36dp"
+        android:layout_height="4dp"
+        android:background="#DDDDDD"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Report User"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvReportTargetName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reporting: Karlo Reyes"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Reason chips -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reason"
+        android:textColor="@color/text_secondary"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/rgReportReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton android:id="@+id/rbNoShow" android:layout_width="match_parent"
+            android:layout_height="40dp" android:text="⚠ No-Show / Didn't Appear"
+            android:textSize="12sp" android:paddingStart="8dp" />
+
+        <RadioButton android:id="@+id/rbFakeSkills" android:layout_width="match_parent"
+            android:layout_height="40dp" android:text="❌ Misrepresented Skills"
+            android:textSize="12sp" android:paddingStart="8dp" />
+
+        <RadioButton android:id="@+id/rbInappropriate" android:layout_width="match_parent"
+            android:layout_height="40dp" android:text="🚫 Inappropriate Behavior"
+            android:textSize="12sp" android:paddingStart="8dp" />
+
+        <RadioButton android:id="@+id/rbScam" android:layout_width="match_parent"
+            android:layout_height="40dp" android:text="💸 Scam / Fraud"
+            android:textSize="12sp" android:paddingStart="8dp" />
+
+        <RadioButton android:id="@+id/rbOther" android:layout_width="match_parent"
+            android:layout_height="40dp" android:text="Other"
+            android:textSize="12sp" android:paddingStart="8dp" />
+    </RadioGroup>
+
+    <!-- Details -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Additional Details"
+        android:textColor="@color/text_secondary"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/etReportDetails"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:hint="Describe what happened..."
+        android:background="@drawable/bg_input_field"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="10dp"
+        android:gravity="top"
+        android:textSize="13sp"
+        android:inputType="textMultiLine"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Three-strike notice -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ℹ Reports of No-Show count toward the Three-Strike Policy. Three confirmed strikes result in automatic suspension."
+        android:textColor="@color/text_secondary"
+        android:textSize="10sp"
+        android:background="@drawable/bg_stat_box"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancelReport"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:background="@drawable/bg_btn_decline"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnSubmitReport"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="Submit Report"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_book_btn" />
+    </LinearLayout>
+</LinearLayout>

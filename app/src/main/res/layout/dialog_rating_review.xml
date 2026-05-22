@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:background="#E2E8EF"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How was your session?"
+        android:textColor="#0F2645"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvRatingProviderName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rate Provider"
+        android:textColor="#7A8B9A"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp">
+
+        <TextView android:id="@+id/star1" android:layout_width="48dp" android:layout_height="48dp"
+            android:gravity="center" android:text="★" android:textSize="36sp"
+            android:textColor="#FFB300" android:clickable="true" android:focusable="true" />
+        <TextView android:id="@+id/star2" android:layout_width="48dp" android:layout_height="48dp"
+            android:gravity="center" android:text="★" android:textSize="36sp"
+            android:textColor="#FFB300" android:clickable="true" android:focusable="true" />
+        <TextView android:id="@+id/star3" android:layout_width="48dp" android:layout_height="48dp"
+            android:gravity="center" android:text="★" android:textSize="36sp"
+            android:textColor="#FFB300" android:clickable="true" android:focusable="true" />
+        <TextView android:id="@+id/star4" android:layout_width="48dp" android:layout_height="48dp"
+            android:gravity="center" android:text="★" android:textSize="36sp"
+            android:textColor="#FFB300" android:clickable="true" android:focusable="true" />
+        <TextView android:id="@+id/star5" android:layout_width="48dp" android:layout_height="48dp"
+            android:gravity="center" android:text="★" android:textSize="36sp"
+            android:textColor="#FFB300" android:clickable="true" android:focusable="true" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What went well?"
+        android:textColor="#0F2645"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView android:id="@+id/tagPunctual" android:layout_width="wrap_content" android:layout_height="32dp"
+            android:gravity="center" android:text="Punctual"
+            android:textColor="#7A8B9A" android:textSize="11sp" android:textStyle="bold"
+            android:background="@drawable/bg_category_chip"
+            android:paddingStart="14dp" android:paddingEnd="14dp"
+            android:layout_marginEnd="8dp" android:clickable="true" android:focusable="true" />
+
+        <TextView android:id="@+id/tagKnowledgeable" android:layout_width="wrap_content" android:layout_height="32dp"
+            android:gravity="center" android:text="Expert"
+            android:textColor="#7A8B9A" android:textSize="11sp" android:textStyle="bold"
+            android:background="@drawable/bg_category_chip"
+            android:paddingStart="14dp" android:paddingEnd="14dp"
+            android:layout_marginEnd="8dp" android:clickable="true" android:focusable="true" />
+
+        <TextView android:id="@+id/tagFriendly" android:layout_width="wrap_content" android:layout_height="32dp"
+            android:gravity="center" android:text="Friendly"
+            android:textColor="#7A8B9A" android:textSize="11sp" android:textStyle="bold"
+            android:background="@drawable/bg_category_chip"
+            android:paddingStart="14dp" android:paddingEnd="14dp"
+            android:clickable="true" android:focusable="true" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write a review (optional)"
+        android:textColor="#0F2645"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/etReviewText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="Share details of your experience..."
+        android:textColorHint="#A0ABB5"
+        android:textColor="#333333"
+        android:background="@drawable/bg_input_field"
+        android:padding="12dp"
+        android:gravity="top"
+        android:textSize="13sp"
+        android:inputType="textMultiLine"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnSubmitReview"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Submit Review"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:backgroundTint="#4DB6AC"
+        android:stateListAnimator="@null"/>
+</LinearLayout>

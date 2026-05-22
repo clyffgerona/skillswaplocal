@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="12dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Emoji avatar -->
+            <TextView
+                android:id="@+id/tvSkillEmoji"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:layout_marginEnd="16dp"
+                android:background="#F0F4F8"
+                android:text="📚" />
+
+            <!-- Right content -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvSkillTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Math &amp; Science Tutor"
+                    android:textColor="#0F2645"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:id="@+id/tvProviderName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Karlo Reyes · Verified ✓"
+                    android:textColor="#7A8B9A"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Meta row: badge, stars, distance -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tvBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Skill Swap"
+                        android:textColor="@color/mint_dark"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_badge_swap"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvStars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="★"
+                        android:textColor="@color/star_color"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="2dp" />
+
+                    <TextView
+                        android:id="@+id/tvRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.9"
+                        android:textColor="#0F2645"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tvDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.8 km"
+                        android:textColor="#7A8B9A"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

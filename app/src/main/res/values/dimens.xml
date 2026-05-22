@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="card_radius">14dp</dimen>
+    <dimen name="chip_radius">8dp</dimen>
+    <dimen name="avatar_size">44dp</dimen>
+    <dimen name="cat_icon_size">44dp</dimen>
+    <dimen name="bottom_nav_height">60dp</dimen>
+    <dimen name="section_label_size">11sp</dimen>
+    <dimen name="card_title_size">13sp</dimen>
+    <dimen name="body_text_size">12sp</dimen>
+    <dimen name="small_text_size">10sp</dimen>
+    <dimen name="tiny_text_size">9sp</dimen>
+</resources>
