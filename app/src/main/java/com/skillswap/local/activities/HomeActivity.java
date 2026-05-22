@@ -27,8 +27,10 @@ import com.skillswap.local.models.SkillProvider;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -43,6 +45,8 @@ public class HomeActivity extends AppCompatActivity {
     private String userSuspensionReason = "";
 
     private List<SkillProvider> allProviders = new ArrayList<>();
+    private Map<String, String> providerPhotoMap = new HashMap<>(); // Holds provider photos
+
     private TextView btnFilterAll, btnFilterSwap, btnFilterCash;
 
     private String currentFilter = "ALL";
@@ -147,7 +151,7 @@ public class HomeActivity extends AppCompatActivity {
                     if (photoUrl != null && !photoUrl.isEmpty()) {
                         ivMyProfileButton.setVisibility(View.VISIBLE);
                         tvMyProfileInitials.setVisibility(View.GONE);
-                        
+
                         Glide.with(HomeActivity.this).load(photoUrl)
                                 .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                                 .into(ivMyProfileButton);
@@ -164,7 +168,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void showSuspensionDialog() {
         androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
-        
+
         // Custom View for the dialog to make it "professional"
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -178,7 +182,7 @@ public class HomeActivity extends AppCompatActivity {
         title.setPadding(0, 0, 0, 20);
 
         TextView message = new TextView(this);
-        String reasonStr = (userSuspensionReason != null && !userSuspensionReason.isEmpty()) 
+        String reasonStr = (userSuspensionReason != null && !userSuspensionReason.isEmpty())
                 ? userSuspensionReason : "Violation of community guidelines.";
         message.setText("Your account has been suspended for the following reason:\n\n\"" + reasonStr + "\"\n\nYou can submit an appeal if you believe this is a mistake.");
         message.setTextColor(Color.parseColor("#0F2645"));
@@ -234,12 +238,14 @@ public class HomeActivity extends AppCompatActivity {
 
         TextView loadingText = new TextView(this);
         loadingText.setText("Loading providers near you...");
-        loadingText.setTextColor(getColor(R.color.text_secondary));
+        loadingText.setTextColor(Color.parseColor("#7A8B9A"));
         loadingText.setPadding(24, 32, 24, 32);
         llSkillCards.addView(loadingText);
 
         db.collection("Users").get().addOnSuccessListener(queryDocumentSnapshots -> {
             allProviders.clear();
+            providerPhotoMap.clear(); // Clear old photos
+
             for (DocumentSnapshot doc : queryDocumentSnapshots) {
                 if (doc.getId().equals(currentUserId)) continue;
 
@@ -277,7 +283,14 @@ public class HomeActivity extends AppCompatActivity {
                 String rawName = doc.getString("fullName");
                 String formattedName = formatOldNames(rawName);
 
-                String skillTitle = skillsList.get(0); // Use the first skill as title
+                // Save their photo to the map!
+                String photoUrl = doc.getString("profilePhotoUrl");
+                if (photoUrl == null || photoUrl.isEmpty()) photoUrl = doc.getString("selfiePhotoUrl");
+                if (photoUrl != null) {
+                    providerPhotoMap.put(formattedName, photoUrl);
+                }
+
+                String skillTitle = skillsList.get(0);
                 String priceRange = doc.getString("priceRange");
 
                 if (isCash && (priceRange == null || priceRange.isEmpty())) {
@@ -369,6 +382,28 @@ public class HomeActivity extends AppCompatActivity {
         TextView tvProvider = card.findViewById(R.id.tvProviderName);
         if (tvProvider != null) tvProvider.setText(p.getName() + (p.isVerified() ? " · Verified ✓" : ""));
 
+        // Load Avatar or show Initials
+        TextView tvInitials = card.findViewById(R.id.tvProviderInitials);
+        ImageView ivAvatar = card.findViewById(R.id.ivProviderAvatar);
+
+        if (tvInitials != null && ivAvatar != null) {
+            String photoUrl = providerPhotoMap.get(p.getName());
+
+            if (photoUrl != null && !photoUrl.isEmpty()) {
+                ivAvatar.setVisibility(View.VISIBLE);
+                tvInitials.setVisibility(View.GONE);
+
+                Glide.with(this)
+                        .load(photoUrl)
+                        .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                        .into(ivAvatar);
+            } else {
+                ivAvatar.setVisibility(View.GONE);
+                tvInitials.setVisibility(View.VISIBLE);
+                tvInitials.setText(getInitialsFallback(p.getName()));
+            }
+        }
+
         TextView tvBadge = card.findViewById(R.id.tvBadge);
         if (tvBadge != null) {
             boolean hasSwap = p.isSwap();
@@ -414,24 +449,16 @@ public class HomeActivity extends AppCompatActivity {
 
         TextView tvDistance = card.findViewById(R.id.tvDistance);
         if (tvDistance != null) tvDistance.setText(p.getDistance());
-
-        TextView tvEmoji = card.findViewById(R.id.tvSkillEmoji);
-        if (tvEmoji != null) {
-            tvEmoji.setText(getEmojiForSkill(p.getSkillTitle()));
-        }
     }
 
-    private String getEmojiForSkill(String skill) {
-        skill = skill.toLowerCase();
-        if (skill.contains("math") || skill.contains("science") || skill.contains("tutor")) return "📚";
-        if (skill.contains("music") || skill.contains("guitar") || skill.contains("piano")) return "🎸";
-        if (skill.contains("cook") || skill.contains("bake") || skill.contains("chef")) return "👨‍🍳";
-        if (skill.contains("code") || skill.contains("program") || skill.contains("web")) return "💻";
-        if (skill.contains("art") || skill.contains("design") || skill.contains("paint")) return "🎨";
-        if (skill.contains("fit") || skill.contains("gym") || skill.contains("yoga")) return "🧘";
-        if (skill.contains("photo") || skill.contains("video")) return "📸";
-        if (skill.contains("lang") || skill.contains("english") || skill.contains("spanish")) return "🌍";
-        return "✨";
+    private String getInitialsFallback(String fullName) {
+        if (fullName == null || fullName.trim().isEmpty()) return "?";
+        String[] parts = fullName.trim().split("\\s+");
+        if (parts.length >= 2) {
+            return (parts[0].substring(0, 1) + parts[parts.length - 1].substring(0, 1)).toUpperCase();
+        } else {
+            return fullName.substring(0, 1).toUpperCase();
+        }
     }
 
     private void openProviderProfile(SkillProvider provider) {
